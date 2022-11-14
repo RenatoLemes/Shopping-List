@@ -12,7 +12,20 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('the_fruit_shop')
 
-sales = SHEET.worksheet('sales')
+FRUIT_LIST = {
+    Banana Box 10kg
+    Apple Box 10kg
+    Pear Box 10kg
+    Pineapple 12 units
+    Papaya Box 10kg
+    Avocado Box 10kg
+    Orange Box 10kg
+    Lemon box 5kg
+}
 
-data = sales.get_all_values()
-print(data)
+def get_order():
+    """ 
+    Get order input from the costumer
+    """
+
+    print("Please, enter your product order")
